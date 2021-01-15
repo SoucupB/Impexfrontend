@@ -1,9 +1,8 @@
-const path = "prodImages/";
+const imagesPath = "prodImages/";
 var offsetTop = 0;
 var offsetLeft = 0;
 
 function getFormatedStyle(photo) {
-  console.log(window.innerWidth, window.innerHeight)
   var img = new Image();
   img.src = path + photo;
   img.id = 'ana';
@@ -12,9 +11,7 @@ function getFormatedStyle(photo) {
     var newHeight = Math.min(500, img.height), newWidth= Math.min(500, img.width);
     var newPosition = Math.floor(window.innerWidth / 2) - Math.floor(newWidth / 2);
     imge.style = 'left: ' + newPosition + 'px; height: ' + newHeight + 'px; width: ' + newWidth + 'px;';
-   // imge.style = 'position: relative; left: ' + newPosition + 'px; height: ' + newHeight + 'px; width: ' + newWidth + 'px;';
     var topPosition = imge.getBoundingClientRect().top - document.getElementById('portfolio').getBoundingClientRect().top;
-   // offsetTop = newPosition;
     offsetLeft = Math.floor(topPosition / 2);
   };
 }
@@ -23,7 +20,7 @@ function createSliderDivs(photo,i) {
   var block = "block";
   if (i>1)block ="none";
   var htmlElement = "<div class = 'mySlides' style='display:"+block+";'>" +
-                    " <img src=" + photo + " " + photo + " style='height:700px; width:100%'>" +
+                    " <img src=" + imagesPath + photo + " style='height:700px; width:100%'>" +
                     "</div>";
   var element = createElementFromHTML(htmlElement);
   return element;
@@ -39,15 +36,11 @@ function loadPresentationImages(photos) {
     parent.appendChild(createSliderDivs(photos[i],i+1));
     parent2.appendChild(createElementFromHTML(dots));
   }
-  //var buttons = "<a class='myprev' onclick='plusSlides(-1)'>"+"&#10094;"+"</a>"+"<a class='mynext' onclick='plusSlides(1)'>"+"&#10095;"+"</a>"
-  //parent.appendChild(createElementFromHTML(buttons));
-  //console.log(dots)
-  //console.log(createElementFromHTML(dots));
 }
 
 function loadImage(photo) {
   var parent = document.getElementById('portfolio');
-  var newElement = createElementFromHTML("<img id=img1 src=" + path + photo + " >");
+  var newElement = createElementFromHTML("<img id=img1 src=" + imagesPath + photo + " >");
   parent.appendChild(newElement);
   getFormatedStyle(photo);
 }
@@ -66,8 +59,8 @@ function createPlaci(photo, nume, culoare, dimensiune,i){
   }
   var htmlStuff = "<div class='col-md-4 col-sm-4 col-xs-12' style='width: 350px; height:150px margin-right: 20px;'><div class='service-widget' >"+
                       "<div class='post-media wow fadeIn'>"+
-                          "<a target='_blank rel='noopener noreferrer' href='"+path+photo+"' data-rel='prettyPhoto[gal]' class='hoverbutton global-radius'><i class='flaticon-unlink'></i></a>"+
-                          "<img id='plm' src='"+path+photo+"' alt='' style='height:320px; width: 320px;'>"+
+                          "<a target='_blank rel='noopener noreferrer' href='"+imagesPath+photo+"' data-rel='prettyPhoto[gal]' class='hoverbutton global-radius'><i class='flaticon-unlink'></i></a>"+
+                          "<img id='plm' src='"+imagesPath+photo+"' alt='' style='height:320px; width: 320px;'>"+
                       "</div>"+
                       "<div class='service-dit'>"+
                           "<h3>"+nume+"</h3>"+
@@ -89,13 +82,11 @@ function createPlaci(photo, nume, culoare, dimensiune,i){
     var colectie = data['colectie'];
     var htmlStuff = "";
     var ok = 0;
-    var photo = "alladin-bl.jpg";//just for testing
-    /// sa-mi bag pula in familia lui de template
-    if(elemente.length==1){
+    var photo = "alladin-bl.jpg";
+    if(elemente.length == 1) {
       var nume = elemente[0]['categorie']+" "+ colectie+" "+elemente[0]['id'];
       if(elemente[0]['img']){
         photo = elemente[0]['img'];
-        console.log(photo);
       }
       else{
         photo = "alladin-bl.jpg";
@@ -108,11 +99,8 @@ function createPlaci(photo, nume, culoare, dimensiune,i){
     else{
       for( i=0;i<elemente.length;i++){
         var nume = elemente[i]['categorie']+" "+ colectie+" "+elemente[i]['id'];
-        //if(elemente[i]['img']!="null"||elemente[i]['img']!=null){
-        console.log(elemente.length);
         if(elemente[i]['img']){
           photo = elemente[i]['img'];
-          console.log(photo);
         }
         else{
           photo = "alladin-bl.jpg";
@@ -127,7 +115,6 @@ function createPlaci(photo, nume, culoare, dimensiune,i){
         }
         ok=i;
         if(ok%3==2){
-          console.log(htmlStuff);
           parent.appendChild(createElementFromHTML(htmlStuff));
           parent.appendChild(createElementFromHTML("<hr class='invis'>"));
           ok=0;
@@ -137,7 +124,6 @@ function createPlaci(photo, nume, culoare, dimensiune,i){
       if(ok%3!=2){
         htmlStuff+="</div>";
       }
-      console.log(htmlStuff);
       if(ok && elemente.length!=1){
         parent.appendChild(createElementFromHTML(htmlStuff));
         parent.appendChild(createElementFromHTML("<hr class='invis'>"));
@@ -152,7 +138,6 @@ function createPlaci(photo, nume, culoare, dimensiune,i){
       data: {},
       success: function( data ) {
         loadPresentationImages(data['record']['img']);
-        //loadImage(data['record']['img']);
         loadTitle(data['record']['colectie']);
       loadDescription(data['record']['descriere']);
       loadData(data['record']);
@@ -161,21 +146,13 @@ function createPlaci(photo, nume, culoare, dimensiune,i){
   });
 }
 getElement();
-
-
-/*
-BULSHITAREALA PENTRU SLIDESHOW
-*/
 var slideIndex = 1;
-
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
-
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
-
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
@@ -191,8 +168,3 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
-/*
-END OF THIS SHIT
-*/
-
-//showSlides(slideIndex);
