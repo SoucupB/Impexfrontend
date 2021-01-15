@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Site Metas -->
+    <title>Impexcera Lux</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="js/portfolio.js"></script>
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon_impexcera.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/logos/favicon_impexcera.png">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+</head>
+<body>
+	<div class="top-bar">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6 col-sm-6">
+					<div class="left-top">
+						<div class="email-box">
+							<a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i>buciumanmihaicatalin@gmail.com</a>
+						</div>
+						<div class="phone-box">
+							<a href="tel:0740463813"><i class="fa fa-phone" aria-hidden="true"></i>0740 463 813</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<div class="right-top">
+						<div class="social-box">
+							<ul>
+								<li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-rss-square" aria-hidden="true"></i></a></li>
+							<ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <header class="header header_style_01">
+        <nav class="megamenu navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="images/logos/logo.png" alt="image"></a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="portfolio.html">Colectii</a></li>
+                        <li><a href="elements.html" class="active" >Produse</a></li>
+                        <li><a href="3D.html">3D Tour</a></li>
+                        <li><a href="locatie.html">Locatie</a></li>
+                        <li><a href="about-us.html">Despre noi</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <style>
+        div.gallery {
+          margin: 5px;
+          border: 1px solid #ccc;
+          float: left;
+          width: 180px;
+        }
+
+        div.gallery:hover {
+          border: 1px solid #777;
+        }
+
+        div.gallery img {
+          width: 180px;
+          height: 180px;
+        }
+
+        div.descr {
+          padding: 15px;
+          text-align: center;
+          background-color: rgb(92, 92, 92);
+        }
+
+        div.boxing {
+            position: relative;
+            left: 500px;
+            height: 100%;
+            width: 50.1%;
+            margin: 5px;
+            float: left;
+            border: 1px outset rgb(61, 61, 61);
+            background-color: rgb(255, 255, 255);
+        }
+
+        div.pagination1 {
+            position: relative;
+            text-align: center;
+        }
+
+        div.pagination1 a {
+            color: black;
+            padding: 8px 16px;
+            left: 500px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #1f1f1f;
+        }
+
+        div.pagination1 a.active {
+            background-color: #008dd2;
+            color: #ffffff;
+            border: 1px solid #008dd2;
+        }
+
+        div.pagination1 a:hover:not(.active) {
+            cursor: pointer;
+            color: rgba(255, 255, 255);
+            background: #e21d24;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        .img-magnifier-container {
+            position:relative;
+        }
+
+        .img-magnifier-glass {
+            position: relative;
+            border: 3px solid #000;
+            border-radius: 50%;
+            cursor: none;
+            width: 100px;
+            height: 100px;
+        }
+
+        .pricing-table {
+        position: relative;
+        display: block;
+        margin: 0 5px;
+        float: left;
+        width: 300px;
+        background: #ffffff;
+        font-family: Roboto, Helvetica, sans-serif;
+        text-align: center;
+        }
+
+        .premium {
+        border-top: 3px solid #008dd2;
+        border-bottom: 3px solid #008dd2;
+        }
+        .pricing-table span {
+        display: block;
+        }
+        .table-head {
+        padding: 25px 0;
+        font-size: 28px;
+        font-weight: bold;
+        }
+
+        .premium .table-head {
+        color: #008dd2;
+        }
+        .price {
+        padding: 8px 0;
+        font-size: 32px;
+        font-weight: bold;
+        color: #ffffff;
+        }
+        .premium .price {
+        background: #008dd2;
+        }
+        .table-row {
+        padding: 10px 0;
+        font-size: 14px;
+        font-weight: 400;
+        color: #888;
+        }
+        .table-row:nth-child(2n) {
+        background: #f7f7f7;
+        }
+        .purchase {
+        padding: 35px 0;
+        }
+        a.buy {
+        position: relative;
+        display: inline-block;
+        z-index: 5;
+        padding: 7px 15px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        -webkit-transition: color .2s ease, background .5s ease;
+        -o-transition: color .2s ease, background .5s ease;
+        transition: color .2s ease, background .5s ease;
+        overflow: hidden;
+        }
+        .premium a.buy {
+        border: 2px solid #008dd2;
+        color: #008dd2;
+        }
+        a.buy:hover {
+        color: #ffffff;
+        }
+        .premium a.buy:hover {
+        background: #008dd2;
+        }
+        a.buy:after {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: block;
+        z-index: -1;
+        width: 100%;
+        height: 0;
+        content: '';
+        -webkit-transition: all .2s ease;
+        -o-transition: all .2s ease;
+        transition: all .2s ease;
+        }
+
+        .premium a.buy:after {
+        background: #008dd2;
+        }
+        a.buy:hover:after {
+        height: 100%;
+        }
+
+
+
+        div.row1{
+            width: 100%;
+            text-align: center;
+        }
+
+           div.block {
+            width: 100px;
+            display: inline-block;
+           }
+    </style>
+
+
+    <div class="section wb">
+        <div  class="container">
+            <div class='row1'>
+                <div class="section-title text-center">
+                    <h3>Descriere produs</h3>
+                </div>
+                <div id="portfolio" class='block'>
+                    <!--h3 id = 'title'></h3-->
+                </div>
+                <div class="pricing-table premium">
+                    <span id = 'title' class="table-head"></span>
+                    <!--span class="price">
+                        Gratis daca comanzi acum!
+                    </span-->
+                    <!-- nu cred ca mai tinem asta dar il comentez momentan span id='0' class="table-row">ID</span-->
+                    <span id='1' class="table-row">Tip placa: </span>
+                    <span id='2' class="table-row">Culoare: </span>
+                    <span id='3' class="table-row">Dimensiune: </span>
+                    <span id='4' class="table-row">Colectie: </span>
+                    <div class="purchase">
+                        <a href="#" class="buy">Obtine oferta</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--button style = 'position: relative;'; onclick='return activateMagnifier()'>Magnify</button-->
+    <!--table>
+        <tr>
+          <th>Id</th>
+          <th>Categorie</th>
+          <th>Culoare</th>
+          <th>Dimensiuni</th>
+          <th>Colectie</th>
+        </tr>
+        <tr>
+          <td id='0'>Alfreds Futterkiste</td>
+          <td id='1'>Maria Anders</td>
+          <td id='2'>Germany</td>
+          <td id='3'>Germany</td>
+          <td id='4'>Germany</td>
+        </tr>
+    </table-->
+
+
+
+
+    <div class="copyrights">
+        <div class="container">
+            <div class="footer-distributed">
+                <div class="footer-left">
+                    <p class="footer-company-name">Toate drepturile rezervate. &copy; 2020 <a href="#">Impexcera Lux</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+    <!-- ALL JS FILES -->
+    <script src="js/all.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/custom.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script src="js/hoverdir.js"></script>
+    <script type="text/javascript" src='scripts/Utils.js'></script>
+    <script type="text/javascript" src='scripts/Element.js'></script>
+
+</body>
+</html>
