@@ -1,4 +1,4 @@
-const per_page = 16;
+const per_page = 15;
 let numberOfPages = 0;
 let idMaps = {};
 let totalCheckerIds = [];
