@@ -150,7 +150,7 @@
                                     <textarea class="form-control" name="comments" id="comments" rows="6" placeholder="Give us more details.."></textarea>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
-                                    <button onClick = 'return populateCheckboxes(document.getElementById("email").value, document.getElementById("comments").value)' type="submit" value="SEND" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">Submit</button>
+                                    <button onClick = 'return sdEmail(document.getElementById("email").value, document.getElementById("comments").value)' type="submit" value="SEND" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">Submit</button>
                                 </div>
                             </fieldset>
                         <!-- </form> -->
@@ -202,6 +202,7 @@
 
 
     <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+    <script src="scripts/Utils.js"></script>
     <script src="scripts/Mailer.js"></script>
 
 </body>

@@ -1,4 +1,4 @@
-function populateCheckboxes(email, desc) {
+function sdEmail(email, desc) {
   $.ajax({
     type: "GET",
     url: 'http://' + publicIP + ':' + publicPort + '/sendEmail?email=' + email + "&description=" + desc,
