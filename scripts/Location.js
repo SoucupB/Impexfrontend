@@ -20,8 +20,7 @@ function alliniateMiddle() {
 }
 function createMap(position) {
   var map = '<div id = "mapgfg" class="mapouter map-pointer">' +
-            ' <div style = "position: relative;" class="gmap_canvas"><iframe width="1200" height="500" id="gmap_canvas" src="' + position + '" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies2.org">fmovies to review</a></div>' +
-            ' <style>.mapouter{position:relative;text-align:right;height:500px;width:1200px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:1200px;}</style>' +
+            ' <div class="gmap_canvas"><iframe width="1200" height="500" id="gmap_canvas" src="' + position + '" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>' +
             '</div>';
   document.getElementById('maps').appendChild(createElementFromHTML(map));
   return true;
