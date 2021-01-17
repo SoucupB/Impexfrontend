@@ -117,21 +117,21 @@ function createPlaci(photo, nume, culoare, dimensiune,i){
           else pDescription +=elemente[0]['categorie'] + " "+dimensiune+virgula;
           continue;
         }
-        if(i%3==0 && ok2){
+        if(i%3==0){
           htmlStuff+="<div class='row text-center'>"+createPlaci(photo,nume,culoare,dimensiune,i);
         }
         else{
           htmlStuff+=createPlaci(photo,nume,culoare,dimensiune,i);
         }
         ok=i;
-        if(ok%3!=2 && ok2){
+        if(ok%3==2){
           parent.appendChild(createElementFromHTML(htmlStuff));
           parent.appendChild(createElementFromHTML("<hr class='invis'>"));
           ok=0;
           htmlStuff="";
         }
       }
-      if(ok%3!=2){
+      if(ok%3!=2 && ok2){
         htmlStuff+="</div>";
       }
       if(ok && elemente.length!=1 && ok2){
