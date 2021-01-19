@@ -93,23 +93,35 @@
             -o-background-size: cover;
             background-size: cover;
         }
-        iframe {
-        display:block;
-        margin:auto;
-        width: 1000px;
-        height: 550px;
+        
+        .container1 {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+        }
+        /* Then style the iframe to fit in the container div with full height and width */
+        .responsive-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 90%;
+        height: 90%;
         }
     </style>
 
-    <div id="about" class="section wb">
-        <div class="container">
+    <div id="about" class="section wb" style="background-color:#f2f3f5;">
+        <!--div class="container"-->
             <div class="section-title text-center">
                 <h3>3D Tour</h3>
                 <p class="lead"><b>Tur virtual pentru showroom-ul din Cluj-Napoca</b></p>
             </div>
-        </div>
-        <div class="container">
-            <iframe src='https://viar.live/embed/tour/tvjas2' allowfullscreen style="margin: auto;"></iframe>
+        <!--/div-->
+        <div class="container1">
+            <iframe class="iframe responsive-iframe" src='https://viar.live/embed/tour/tvjas2' allowfullscreen style="margin: auto;"></iframe>
         </div>
     </div>
 

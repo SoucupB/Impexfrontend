@@ -59,7 +59,7 @@ function createPlaci(photo, nume, culoare, dimensiune,i){
   }
   var htmlStuff = "<div class='col-md-4 col-sm-4 col-xs-12' style='width: 350px; height:150px margin-right: 20px;'><div class='service-widget' >"+
                       "<div class='post-media wow fadeIn'>"+
-                          "<a target='_blank rel='noopener noreferrer' href='"+imagesPath+photo+"' data-rel='prettyPhoto[gal]' class='hoverbutton global-radius'><i class='flaticon-unlink'></i></a>"+
+                          "<a target=_blank rel='noopener noreferrer' href='"+imagesPath+photo+"' data-rel='prettyPhoto[gal]' class='hoverbutton global-radius'><i class='flaticon-unlink'></i></a>"+
                           "<img id='plm' src='"+imagesPath+photo+"' alt='' style='height:320px; width: 320px;'>"+
                       "</div>"+
                       "<div class='service-dit'>"+

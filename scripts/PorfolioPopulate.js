@@ -155,8 +155,8 @@ function createPaginations(cat_id) {
         var pag = createElementFromHTML(htmlPagination);
         element.appendChild(pag);
     }
-    element.appendChild(createElementFromHTML("<a id = pag_" + pagSize.toString() + ">&raquo;</a>"))
-    catExamples.push("pag_" + pagSize.toString());
+    //element.appendChild(createElementFromHTML("<a id = pag_" + pagSize.toString() + "></a>"))
+    //catExamples.push("pag_" + pagSize.toString());
 }
 
 function beginAnimation() {

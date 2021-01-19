@@ -30,11 +30,17 @@ function activateMagnifier() {
 
 function loadImage(photo) {
   var parent = document.getElementById('portfolio');
-  var newElement = createElementFromHTML("<img id=img1 src=" +
-                                         path + photo + " >");
+  //var newElement = createElementFromHTML("<div><img class='img-responsive img-rounded' style='max-height:360px; max-width: 320px;' src=" +
+  //                                       path + photo + " ></div>");
+  var newElement = createElementFromHTML(
+                                         "<div class='col-md-4 col-sm-4 col-xs-12' style='width: 350px; height:150px margin-right: 20px;'>"+
+                                         "<div class='service-widget'>"+
+                                         "<div class='post-media wow fadeIn' style='visibility: visible; animation-name: fadeIn;'>"+
+                                         "<a target='_blank' rel='noopener noreferrer' href='"+path+photo+"' data-rel='prettyPhoto[gal]' class='hoverbutton global-radius'><i class='flaticon-unlink'></i></a><img id='plm' src='"+path+photo+"' alt='' style='max-height:320px; max-width: 320px;'></div></div></div>");
   parent.appendChild(newElement);
   getFormatedStyle(photo);
 }
+
 
 function loadTitle(data) {
   var title =  capitalizeFirstLetter(data['categorie'])+" "+ capitalizeFirstLetter(data['colectie']);

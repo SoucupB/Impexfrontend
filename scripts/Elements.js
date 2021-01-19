@@ -9,8 +9,9 @@ const imgFolder = 'prodImages/';
 
 function createMagElement(photo, titlu, id, uniqID) {
   var htmlElement = "<div onclick = 'disableDiv()' class='gallery' id = el_" + id.toString() + ">" +
-                    " <a id = trg_ " + id.toString() + " target='_blank' href='element.html?id=" + uniqID + "'>" +
-                    "   <img id = imge_ " + id.toString() + " src=" + imgFolder + photo + " alt='Cinque Terre'>" +
+                    " <a id = trg_" + id.toString() + " href='element.html?id=" + uniqID + "'>" +
+                    //" <a id = trg_" + id.toString() + " target='_blank' href='element.html?id=" + uniqID + "'>" +
+                    "   <img id = imge_" + id.toString() + " src=" + imgFolder + photo + " alt='Cinque Terre'>" +
                     " </a>" +
                     "<div class='descr' id = dsc_" + id.toString() + ">" + titlu + "</div>";
   var element = createElementFromHTML(htmlElement);
@@ -29,7 +30,7 @@ function createPaginations(number) {
     var element = createElementFromHTML('<a onclick = "return changePag(' + ci + ')" id = pag_' + ci + '>' + ci + '</a>');
     parent.appendChild(element);
   }
-  parent.appendChild(createElementFromHTML("<a id = finish_pag>&raquo;</a>"))
+  //parent.appendChild(createElementFromHTML("<a id = finish_pag>&raquo;</a>"))
 }
 
 function deletePagination(number) {
@@ -39,7 +40,7 @@ function deletePagination(number) {
       elements.remove();
     }
   }
-  document.getElementById('finish_pag').remove();
+  //document.getElementById('finish_pag').remove();
 }
 
 function deleteElements() {
@@ -158,7 +159,7 @@ function createElementsType() {
     url: 'http://' + publicIP + ':' + publicPort + '/elementsAttrs?atr=categorie',
     data: {},
     success: function( data ) {
-      createDivButton("All", 5);
+      createDivButton("Toate", 5);
       data['records'].forEach(element => {
         createDivButton(element, 5);
       });
@@ -198,7 +199,7 @@ function searchFilterData() {
 }
 
 function createDivButton(title, quant) {
-  var categ = '<li class = "btn-load" style="position: absolute;"><a class="btn btn-dark btn-radius btn-brd btn-color" data-toggle="tooltip" ' +
+  var categ = '<li class = "btn-load" style="position: absolute;"><a class="btn btn-dark btn-radius btn-brd btn-color" style="color:#e21d24;border:2px solid #008dd2 !important;" data-toggle="tooltip" ' +
                 ' data-placement="top"' +
                 'style = "color:red;">' + title + '</a></li>';
   document.getElementById('da-thumbs').appendChild(createElementFromHTML(categ));

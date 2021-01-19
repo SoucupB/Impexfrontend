@@ -22,6 +22,11 @@ function createMap(position) {
   var map = '<div id = "mapgfg" class="mapouter map-pointer">' +
             ' <div class="gmap_canvas"><iframe width="1200" height="500" id="gmap_canvas" src="' + position + '" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>' +
             '</div>';
+  if(mobileCheck()){
+    map = '<div id = "mapgfg" class="mapouter map-pointer">' +
+            ' <div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas" src="' + position + '" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>' +
+            '</div>';
+  }
   document.getElementById('maps').appendChild(createElementFromHTML(map));
   return true;
 }

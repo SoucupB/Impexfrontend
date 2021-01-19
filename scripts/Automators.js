@@ -31,15 +31,15 @@ function regulateButtons() {
 
 function colorItself(element) {
   if(lasthighlighted !== 0) {
-    $('#' + lasthighlighted).css({"background-color": "white", "color": "red"});
+    $('#' + lasthighlighted).css({"background-color": "transparent", "border":"2px solid #008dd2 !important","color": "#e21d24"});
   }
-  $('#' + element).css({"background-color": "red", "color": "white"});
+  $('#' + element).css({"background-color": "#e21d24",  "border":"2px solid #008dd2 !important","color": "white"});
   lasthighlighted = element;
 }
 
 function firstColoring() {
   lasthighlighted = "dtr_0";
-  $('#' + lasthighlighted).css({"background-color": "red", "color": "white"});
+  $('#' + lasthighlighted).css({"background-color": "#e21d24","border":"2px solid #008dd2 !important", "color": "white",});
 }
 
 function coloringButton() {

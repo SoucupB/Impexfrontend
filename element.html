@@ -79,6 +79,7 @@
     </header>
     <style>
         div.gallery {
+          background-color: transparent;
           margin: 5px;
           border: 1px solid #ccc;
           float: left;
@@ -257,8 +258,6 @@
         height: 100%;
         }
 
-
-
         div.row1{
             width: 100%;
             text-align: center;
@@ -271,28 +270,33 @@
     </style>
 
 
+    <!--div class="section wb" style="background-color:#f2f3f5;"-->
     <div class="section wb">
         <div  class="container">
             <div class='row1'>
                 <div class="section-title text-center">
                     <h3>Descriere produs</h3>
+                    <p class="lead">Dacă aveți întrebări cu privire la bunuri, prețuri și livrare, vă rugăm să ne contactati telefonic sau prin email -> <a href="contact.html" style="color:blue">contact</a></p>
+                
                 </div>
-                <div id="portfolio" class='block'>
-                    <!--h3 id = 'title'></h3-->
-                </div>
-                <div class="pricing-table premium">
-                    <span id = 'title' class="table-head"></span>
-                    <!--span class="price">
-                        Gratis daca comanzi acum!
-                    </span-->
-                    <!-- nu cred ca mai tinem asta dar il comentez momentan span id='0' class="table-row">ID</span-->
-                    <span id='1' class="table-row">Tip placa: </span>
-                    <span id='2' class="table-row">Culoare: </span>
-                    <span id='3' class="table-row">Dimensiune: </span>
-                    <span id='4' class="table-row">Colectie: </span>
-                    <div class="purchase">
-                        <a href="#" class="buy">Obtine oferta</a>
+                <div class="col-md-6">
+                    <div class="pricing-table premium">
+                        <span id = 'title' class="table-head"></span>
+                        <!--span class="price">
+                            Gratis daca comanzi acum!
+                        </span-->
+                        <!-- nu cred ca mai tinem asta dar il comentez momentan span id='0' class="table-row">ID</span-->
+                        <span id='1' class="table-row">Tip placa: </span>
+                        <span id='2' class="table-row">Culoare: </span>
+                        <span id='3' class="table-row">Dimensiune: </span>
+                        <span id='4' class="table-row">Colectie: </span>
+                        <!--div class="purchase">
+                            <a href="#" class="buy">Obtine oferta</a>
+                        </div-->
                     </div>
+                </div>
+                <div id="portfolio" class="col-md-6" >
+                    <!--h3 id = 'title'></h3 class='block'-->
                 </div>
             </div>
         </div>
