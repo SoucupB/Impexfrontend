@@ -237,8 +237,9 @@ function customs() {
 			}
 
 			$(window).load(function() {
-					$("#preloader").on(500).fadeOut();
-					$(".preloader").on(600).fadeOut("slow");
+				console.log("aici");
+					$("#preloader1").on(2000).fadeOut();
+					$(".preloader1").on(2500).fadeOut("slow");
 			});
 
 			function count($this) {

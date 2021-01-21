@@ -118,7 +118,14 @@ function populateElements(page, per_page) {
     success: function( data ) {
       numberOfPages = data['pages'];
       for(var i = 0; i < data['elements'].length; i++) {
-        addElement(data['elements'][i]['img'], data['elements'][i]['categorie'] + " " + data['elements'][i]['culoare'], i, data['elements'][i]['IDnum']);
+        if (data['elements'][i]['culoare']){
+          if(data['elements'][i]['colectie']=='Mosaic'||data['elements'][i]['colectie']=='mosaic')addElement(data['elements'][i]['img'], data['elements'][i]['categorie'] + " "+ data['elements'][i]['culoare'], i, data['elements'][i]['IDnum']);  
+          else addElement(data['elements'][i]['img'], data['elements'][i]['categorie'] + " "+data['elements'][i]['colectie']+" " + data['elements'][i]['culoare'], i, data['elements'][i]['IDnum']);
+        }
+        else{
+          if(data['elements'][i]['colectie']=='Mosaic'||data['elements'][i]['colectie']=='mosaic')addElement(data['elements'][i]['img'], data['elements'][i]['categorie'], i, data['elements'][i]['IDnum']);  
+          else addElement(data['elements'][i]['img'], data['elements'][i]['categorie'] + " "+data['elements'][i]['colectie'], i, data['elements'][i]['IDnum']);
+        }
       }
     },
     dataType: 'json'

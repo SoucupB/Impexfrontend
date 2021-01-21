@@ -1,2 +1,71 @@
+#preloader1 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #008dd2;
+  z-index: 11000;
+  position: fixed;
+  display: block;
+display: flex;
+align-items: center;
+justify-content: center;
+}
 
-/** ADD YOUR AWESOME CODES HERE **/
+.preloader1 {
+  position: absolute;
+  margin: 0 auto;
+  left: 1%;
+  right: 1%;
+  top: 45%;
+  width: 95px;
+  height: 95px;
+  background: center center no-repeat none;
+  background-size: 95px 95px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%
+}
+
+.loader1 svg {
+width: 300px;
+height: 108px;
+}
+.loader1 svg polygon {
+fill: #008dd2;
+color: #008dd2;
+animation: change 1.2s infinite;
+}
+.loader1 svg polygon:nth-child(1) {
+animation-delay: 0.2s;
+}
+.loader1 svg polygon:nth-child(2) {
+animation-delay: 0.4s;
+}
+.loader1 svg polygon:nth-child(3) {
+animation-delay: 0.6s;
+}
+.loader1 svg polygon:nth-child(4) {
+animation-delay: 0.8s;
+}
+.loader1 svg polygon:nth-child(5) {
+animation-delay: 1s;
+}
+@keyframes change {
+0% {
+  fill: #008dd2;
+  color: #008dd2;
+}
+30% {
+  fill: #e21d24;
+  color: #e21d24;
+}
+100% {
+  fill: #008dd2;
+  color: #008dd2;
+}
+}
