@@ -108,12 +108,12 @@ function fillWithCollectionItems(collectionTypesData, idsOffset, page) {
     else {
         queryData = "";
     }
+    console.log(queryData)
     $.ajax({
         type: "GET",
         url: 'http://' + publicIP + ':3000/portfolio_all?page=' + page.toString() + '&per_page=' + per_page.toString() + queryData,
         data: {},
         success: function( data ) {
-            console.log(idsOffset);
             containerMap[".cat" + (idsOffset + 1).toString()] = data['pages'];
             var parcare = 0;
             for(var i = 0; i < data['data'].length; i++) {
@@ -121,9 +121,6 @@ function fillWithCollectionItems(collectionTypesData, idsOffset, page) {
                     parcare++;
                     $('#id_' + (idsOffset * per_page + realIndex).toString()).show();
                     replaceRecordData(idsOffset * per_page + realIndex++,data['data'][i]['IDnum'] ,data['data'][i]['colectie'], data['data'][i]['descriere'], imgFolder + data['data'][i]['img'][0]);
-                }
-                else {
-                    console.log('ANA', data['data'][i]['IDnum'])
                 }
             }
         },
@@ -155,8 +152,6 @@ function createPaginations(cat_id) {
         var pag = createElementFromHTML(htmlPagination);
         element.appendChild(pag);
     }
-    //element.appendChild(createElementFromHTML("<a id = pag_" + pagSize.toString() + "></a>"))
-    //catExamples.push("pag_" + pagSize.toString());
 }
 
 function beginAnimation() {

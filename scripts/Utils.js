@@ -1,4 +1,4 @@
-const publicIP = '206.189.10.60'; // adresa masinii host
+const publicIP = '192.168.100.34';//'206.189.10.60'; // adresa masinii host
 const privateIP = '206.189.10.60';
 const publicPort = 3000;
 
