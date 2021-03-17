@@ -1,5 +1,5 @@
-const publicIP = '206.189.10.60'; // adresa masinii host
-const privateIP = '206.189.10.60';
+const publicIP = '134.122.78.135'; // adresa masinii host
+const privateIP = '134.122.78.135';
 const publicPort = 3000;
 
 function createElementFromHTML(htmlString) {
