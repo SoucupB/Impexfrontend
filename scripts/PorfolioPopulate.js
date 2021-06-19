@@ -89,7 +89,7 @@ function replaceRecordData(id, IDNum, colectie, descriere, imagine) {
         return 0;
     }
     var a = document.getElementById('ida_' + id.toString());
-    a.setAttribute('href',"colectie.html?id="+IDNum)
+    a.setAttribute('href',`colectie.html?id=${IDNum}&utm_colectie=${colectie}`)
     var collection = document.getElementById('idc_' + id.toString());
     var image = document.getElementById('idb_' + id.toString());
     collection.innerHTML = colectie + ' <small> ' + descriere + ' </small>';
