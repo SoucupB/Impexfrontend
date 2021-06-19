@@ -180,3 +180,13 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+
+function comanda() {
+  var button = document.getElementById('comanda');
+  var contact_div = document.getElementById('contact_div');
+  var comanda_div = document.getElementById('comanda_div');
+  if (contact_div.style.display == 'none') {
+      contact_div.style.display = 'block';
+      comanda_div.style.display = 'none';
+  }
+};
