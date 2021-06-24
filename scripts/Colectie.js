@@ -1,7 +1,7 @@
 const imagesPath = "prodImages/";
 var offsetTop = 0;
 var offsetLeft = 0;
-
+var origHref = window.location.href;
 function getFormatedStyle(photo) {
   var img = new Image();
   img.src = path + photo;
@@ -182,7 +182,8 @@ function showSlides(n) {
 }
 
 function comanda() {
-  var button = document.getElementById('comanda');
+  colectie = document.getElementById('title').textContent;
+  window.history.pushState("", "", origHref+"&utm_colectie="+colectie);
   var contact_div = document.getElementById('contact_div');
   var comanda_div = document.getElementById('comanda_div');
   if (contact_div.style.display == 'none') {
