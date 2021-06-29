@@ -51,6 +51,37 @@ function loadTitle(title) {
 function loadDescription(description) {
   document.getElementById('descriere').innerHTML = capitalizeFirstLetter(description);
 }
+function loadMetas(data){
+  var colectie = capitalizeFirstLetter(data['colectie']);
+  var elemente = data['elemente'];
+  var tip = data['tip'];
+  var descriere = data['descriere'];
+  var culori = "";
+  var dimensiuni = "";
+  var title = "";
+  var aux = [];
+  for( i=0;i<elemente.length;i++){
+    var culoare = elemente[i]['culoare'];
+    var dimensiune = elemente[i]['dimensiuni'];
+    if(!(culoare === "" || culoare === "null" || culoare === null)){
+      var exist = false;
+      for(j=0;j<aux.length;j++){
+        if(aux[j]==culoare){
+          exist = true;
+          break;
+        }
+      }
+      if (!exist){
+        culori += culoare+" ";
+        aux.push(culoare);
+      }
+    }
+    dimensiuni += dimensiune+" cm ";
+  } 
+  title = "Gresie si faianta "+ tip+" model "+colectie+" culori: "+culori+"dimensiuni: "+dimensiuni+" - impexceralux.ro";
+  document.querySelector('meta[name="title"]').setAttribute("content", title);
+  document.querySelector('meta[name="description"]').setAttribute("content", descriere);
+}
 
 function createPlaci(photo, nume, culoare, dimensiune,i){
   var color = "";
@@ -149,6 +180,7 @@ function createPlaci(photo, nume, culoare, dimensiune,i){
       url: 'http://' + publicIP + ':' + publicPort + '/getElementByID?id=' + getSearchParameters()['id'],
       data: {},
       success: function( data ) {
+        loadMetas(data['record']);
         loadPresentationImages(data['record']['img']);
         loadTitle(data['record']['colectie']);
       loadDescription(data['record']['descriere']);
