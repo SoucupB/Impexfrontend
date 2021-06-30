@@ -79,7 +79,7 @@ function loadMetas(data){
     dimensiuni += dimensiune+" cm ";
   } 
   title = "Gresie si faianta "+ tip+" model "+colectie+" culori: "+culori+"dimensiuni: "+dimensiuni+" - impexceralux.ro";
-  document.querySelector('meta[name="title"]').setAttribute("content", title);
+  document.title = title;
   document.querySelector('meta[name="description"]').setAttribute("content", descriere);
 }
 
